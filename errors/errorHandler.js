@@ -1,7 +1,7 @@
 // Throws an exception 
 const errorGenerator = function(req,res,next){
     const error = new Error('404 Resource Not found')
-    error.statis = 404;
+    error.status = 404;
     next(error);
 }
 

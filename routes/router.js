@@ -1,9 +1,9 @@
-const router = require('express').Router()
+const router =  require('express').Router()
+const user = require('../api/user/index')
+const blog = require('../api/blog/index')
+const DemoMiddleware = require('../middleware/demo')
 
-const getAppHealthChecker = require('../controller/app')
-const getHomeController = require('../controller/BlogRoute')
-
-router.get('/health',  getAppHealthChecker)
-router.get('/', getHomeController)
+router.use('/user',user)
+router.use('/blog', blog)
 
 module.exports = router
